@@ -1,0 +1,321 @@
+:root{
+    --clr-primary-100: hsl(263, 55%, 52%);
+    --clr-primary-200: hsl(217, 19%, 35%);
+    --clr-primary-300: hsl(219, 29%, 14%);
+    --clr-primary-400: hsl(0, 0%, 100%);
+
+    --clr-neutral-100: hsl(0, 0%, 81%);
+    --clr-neutral-400: hsl(210, 46%, 95%);
+
+    --bg-primary-100: hsl(0, 0%, 100%);
+    --bg-primary-200: hsl(212, 45%, 89%);
+    --bg-primary-300: hsl(220, 15%, 55%);
+    --bg-primary-400: hsl(218, 44%, 22%);
+
+    --bg-neutral-100: hsl(212, 21%, 14%);
+    --bg-neutral-400: hsl(228, 12%, 48%);
+    --bg-neutral-700: hsl(0, 0%, 100%);
+
+    --size-100: 0.5rem;
+    --size-300: 1rem;
+    --size-500: 1.5rem;
+    --size-700: 2rem;
+
+    --ff-primary: 'Barlow Semi Condensed', sans-serif;
+    --ff-secondary: 'Montserrat', sans-serif;
+
+    --fw-normal: 500;
+    --fw-bold: 600;
+
+    --flex: flex;
+}
+/* Color panel */
+/* PRIMARY */
+.clr-primary-100{
+    color: var(--clr-primary-100);
+}
+.clr-primary-200{
+    color: var(--clr-primary-200);
+}
+.clr-primary-300{
+    color: var(--clr-primary-300);
+}
+.clr-primary-400{
+    color: var(--clr-primary-400);
+}
+.clr-primary-500{
+    color: var(--clr-primary-500);
+}
+/* NEUTRAL */
+.clr-neutral-600{
+    color: var(--clr-neutral-600);
+}
+.clr-neutral-400{
+    color: var(--clr-neutral-400);
+}
+.clr-neutral-700{
+    color: var(--clr-neutral-700);
+}
+/* Background color panel*/
+/* PRIMARY */
+.bg-primary-100{
+    background-color: var(--bg-primary-100);
+}
+.bg-primary-200{
+    background-color: var(--bg-primary-200);
+}
+.bg-primary-300{
+    background-color: var(--bg-primary-300);
+}
+.bg-primary-400{
+    background-color: var(--bg-primary-400);
+}
+.bg-primary-500{
+    background-color: var(--bg-primary-500);
+}
+/* NEUTRAL */
+.bg-neutral-100{
+    background-color: var(--bg-neutral-100);
+}
+.bg-neutral-400{
+    background-color: var(--bg-neutral-400);
+}
+.bg-neutral-700{
+    background-color: var(--bg-neutral-700);
+}
+
+/* Font Family */
+.ff-primary{
+    font-family: var(--ff-primary);
+}
+.ff-secondary{
+    font-family: var(--ff-secondary);
+}
+/* Font Weight */
+.fw-normal{
+    font-weight: var(--fw-normal);
+}
+.fw-bold{
+    font-weight: var(--fw-bold);
+}
+/* Font Size */
+.fz-100{
+    font-size: var(--size-100);
+}
+.fz-300{
+    font-size: var(--size-300);
+}
+.fz-500{
+    font-size: var(--size-500);
+}
+.fz-700{
+    font-size: var(--size-700);
+}
+/* Flex propriety */
+.flex{
+    display: var(--flex);
+}
+.flex-center{
+    display: var(--flex);
+    justify-content: center;
+    align-items: center;
+}
+/* Reset CSS */
+body,
+html{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+    box-sizing: border-box;
+    font-family: var(--ff-primary);
+}
+*, *:before, *:after{
+    box-sizing: border-box;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+ol, ul{
+    list-style-type: none;
+}
+
+img, picture, svg{
+    height: auto;
+    max-width: 100%;
+}
+/* CONTAINER */
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--clr-neutral-400);
+    .container{
+        width: 70%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas: 
+        "daniel daniel jonathan kira"
+        "jeanette patrick patrick kira";
+        grid-gap: 1rem;
+        .card{
+            padding: var(--size-700);
+            border-radius: 10px;
+            box-shadow: 2px 2px 15px rgba(168, 168, 168, 0.396);
+            img{
+                border-radius: 50%;
+            }
+            .user{
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 2rem;
+                margin: var(--size-100);
+                .user-data{
+                    .name{
+                        font-weight: var(--fw-bold);
+                    }
+                    .role{
+                        font-weight: var(--fw-normal);
+                    }
+                }
+            }
+            .text{
+                .title{
+                    font-weight: var(--fw-bold);
+                    margin-bottom: var(--size-300);
+                }
+                .parag{
+                    font-weight: var(--fw-normal);
+                }
+            }
+        }
+        .card:nth-child(1){
+            grid-area: daniel;
+            background: var(--clr-primary-100);
+            background-image: url(images/bg-pattern-quotation.svg);
+            background-position: 20rem 0;
+            background-repeat: no-repeat;
+            color: var(--clr-primary-400);
+            .user{
+                .user-data{
+                    .role{
+                        color: hsla(0, 0%, 100%, 0.7);
+                    }
+                }
+            }
+            .text{
+                .parag{
+                        color: hsla(0, 0%, 100%, 0.7);
+                }
+            }
+        }
+        .card:nth-child(2){
+            grid-area: jonathan;
+            background: var(--clr-primary-200);
+            color: var(--clr-primary-400);
+            .user{
+                .user-data{
+                    .role{
+                        color: hsla(0, 0%, 100%, 0.7);
+                    }
+                }
+            }
+            .text{
+                .parag{
+                        color: hsla(0, 0%, 100%, 0.7);
+                }
+            }
+        }
+        .card:nth-child(3){
+            grid-area: kira;
+            background: var(--clr-primary-400);
+            .user{
+                .user-data{
+                    .role{
+                        color: hsla(0, 0%, 0%, 0.7);
+                    }
+                }
+            }
+            .text{
+                .parag{
+                        color: hsla(0, 0%, 0%, 0.7);
+                }
+            }
+        }
+        .card:nth-child(4){
+            grid-area: jeanette;
+            background: var(--clr-primary-400);
+            .user{
+                .user-data{
+                    .role{
+                        color: hsla(0, 0%, 0%, 0.7);
+                    }
+                }
+            }
+            .text{
+                .parag{
+                        color: hsla(0, 0%, 0%, 0.7);
+                }
+            }
+        }
+        .card:nth-child(5){
+            grid-area: patrick;
+            background: var(--clr-primary-300);
+            color: var(--clr-primary-400);
+            .user{
+                .user-data{
+                    .role{
+                        color: hsla(0, 0%, 100%, 0.7);
+                    }
+                }
+            }
+            .text{
+                .parag{
+                        color: hsla(0, 0%, 100%, 0.7);
+                }
+            }
+        }
+    }
+}
+/* MEDIA QUERY */
+@media (max-width: 375px) {
+body{
+    .container{
+        height: 100%;
+        margin: 2rem;
+        width: 100%;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "daniel"
+        "jonathan"
+        "jeanette"
+        "patrick"
+        "kira";
+        .card{
+            padding: 4rem;
+        }
+        .card:nth-child(1){
+            grid-area: daniel;
+            background-position: 15rem 0;
+        }
+        .card:nth-child(2){
+            grid-area: jonathan;
+        }
+        .card:nth-child(3){
+            grid-area: jeanette;
+        }
+        .card:nth-child(4){
+            grid-area: patrick;
+        }
+        .card:nth-child(5){
+            grid-area: kira;
+        }
+    }
+}
+}
